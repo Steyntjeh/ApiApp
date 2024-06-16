@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Material.io bestanden (CSS & Font/icons)-->
+    <!-- Uitleg werking componenents: https://material.io/components?platform=web -->
+    <!-- Demo van components:         https://material-components.github.io/material-components-web-catalog/#/ -->
+    <!-- Demo en uitleg icons:        https://fonts.google.com/icons?selected=Material+Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>body{margin: 0;}</style>
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>const MDCBanner = mdc.banner.MDCBanner;const MDCCheckbox = mdc.checkbox.MDCCheckbox;const MDCChip = mdc.chips.MDCChip;const MDCChipSet = mdc.chips.MDCChipSet;const MDCCircularProgress = mdc.circularProgress.MDCCircularProgress;const MDCDataTable = mdc.dataTable.MDCDataTable;const MDCDialog = mdc.dialog.MDCDialog;const MDCDrawer = mdc.drawer.MDCDrawer;const MDCFloatingLabel = mdc.floatingLabel.MDCFloatingLabel;const MDCFormField = mdc.formField.MDCFormField;const MDCIconButtonToggle = mdc.iconButton.MDCIconButtonToggle;const MDCLineRipple = mdc.lineRipple.MDCLineRipple;const MDCLinearProgress = mdc.linearProgress.MDCLinearProgress;const MDCList = mdc.list.MDCList;const MDCMenu = mdc.menu.MDCMenu;const MDCMenuSurface = mdc.menuSurface.MDCMenuSurface;const MDCNotchedOutline = mdc.notchedOutline.MDCNotchedOutline;const MDCRadio = mdc.radio.MDCRadio;const MDCRipple = mdc.ripple.MDCRipple;const MDCSegmentedButton = mdc.segmentedButton.MDCSegmentedButton;const MDCSelect = mdc.select.MDCSelect;const MDCSlider = mdc.slider.MDCSlider;const MDCSnackbar = mdc.snackbar.MDCSnackbar;const MDCSwitch = mdc.switchControl.MDCSwitch;const MDCTabBar = mdc.tabBar.MDCTabBar;const MDCTextField = mdc.textField.MDCTextField;const MDCTooltip = mdc.tooltip.MDCTooltip;const MDCTopAppBar = mdc.topAppBar.MDCTopAppBar;</script>
+
+    <script>
+    
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+      })
+
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Country's</title>
+</head>
+<body>
+    <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__content">
+          <div class="logo">
+            <a href="index.html"><img src="../images/logo.png"></a>
+          </div>  
+          <nav class="mdc-list">
+            <a class="mdc-list-item mdc-list-item--activated" href="index.html" aria-current="page" tabindex="0">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+              <span class="mdc-list-item__text">Home</span>
+            </a>
+            <a class="mdc-list-item" href="search.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">search</i>
+              <span class="mdc-list-item__text">Search country</span>
+            </a>
+            <a class="mdc-list-item" href="map.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">quiz</i>
+              <span class="mdc-list-item__text">quiz</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      
+      <div class="mdc-drawer-scrim"></div>
+      
+       <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+          <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+              <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+              <span class="mdc-top-app-bar__title">Country's</span>
+            </section>
+          </div>
+        </header>
+
+        <main class="mdc-top-app-bar--fixed-adjust">
+          <div class="zoeken">
+            <h1>Zoek een land</h1>
+                <input type="text" id="searchInput" placeholder="Voer landnaam in...">
+                <button onclick="searchCountry()">Zoeken</button>
+  
+            <div id="results"></div>
+          </div>
+        </main>
+
+        
+
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/script.js"></script>
+</body>
+</html>

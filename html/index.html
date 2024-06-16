@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Material.io bestanden (CSS & Font/icons)-->
+    <!-- Uitleg werking componenents: https://material.io/components?platform=web -->
+    <!-- Demo van components:         https://material-components.github.io/material-components-web-catalog/#/ -->
+    <!-- Demo en uitleg icons:        https://fonts.google.com/icons?selected=Material+Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>body{margin: 0;}</style>
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>const MDCBanner = mdc.banner.MDCBanner;const MDCCheckbox = mdc.checkbox.MDCCheckbox;const MDCChip = mdc.chips.MDCChip;const MDCChipSet = mdc.chips.MDCChipSet;const MDCCircularProgress = mdc.circularProgress.MDCCircularProgress;const MDCDataTable = mdc.dataTable.MDCDataTable;const MDCDialog = mdc.dialog.MDCDialog;const MDCDrawer = mdc.drawer.MDCDrawer;const MDCFloatingLabel = mdc.floatingLabel.MDCFloatingLabel;const MDCFormField = mdc.formField.MDCFormField;const MDCIconButtonToggle = mdc.iconButton.MDCIconButtonToggle;const MDCLineRipple = mdc.lineRipple.MDCLineRipple;const MDCLinearProgress = mdc.linearProgress.MDCLinearProgress;const MDCList = mdc.list.MDCList;const MDCMenu = mdc.menu.MDCMenu;const MDCMenuSurface = mdc.menuSurface.MDCMenuSurface;const MDCNotchedOutline = mdc.notchedOutline.MDCNotchedOutline;const MDCRadio = mdc.radio.MDCRadio;const MDCRipple = mdc.ripple.MDCRipple;const MDCSegmentedButton = mdc.segmentedButton.MDCSegmentedButton;const MDCSelect = mdc.select.MDCSelect;const MDCSlider = mdc.slider.MDCSlider;const MDCSnackbar = mdc.snackbar.MDCSnackbar;const MDCSwitch = mdc.switchControl.MDCSwitch;const MDCTabBar = mdc.tabBar.MDCTabBar;const MDCTextField = mdc.textField.MDCTextField;const MDCTooltip = mdc.tooltip.MDCTooltip;const MDCTopAppBar = mdc.topAppBar.MDCTopAppBar;</script>
+
+    <script>
+    
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+      })
+
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Country's</title>
+</head>
+<body>
+    <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__content">
+          <div class="logo">
+            <img src="../images/logo.png">
+          </div>  
+          <nav class="mdc-list">
+            <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+              <span class="mdc-list-item__text">Home</span>
+            </a>
+            <a class="mdc-list-item" href="search.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">search</i>
+              <span class="mdc-list-item__text">Search country</span>
+            </a>
+            <a class="mdc-list-item" href="map.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">quiz</i>
+              <span class="mdc-list-item__text">Quiz</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      
+      <div class="mdc-drawer-scrim"></div>
+      
+       <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+          <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+              <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+              <span class="mdc-top-app-bar__title">Country's</span>
+            </section>
+          </div>
+        </header>
+
+        <main class="mdc-top-app-bar--fixed-adjust">
+          <div class="mdc-tab-bar" role="tablist">
+            <div class="mdc-tab-scroller">
+              <div class="mdc-tab-scroller__scroll-area">
+                <div class="mdc-tab-scroller__scroll-content">
+                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                    <span class="mdc-tab__content">
+                      <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
+                      <span class="mdc-tab__text-label continent">Europe</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                    <span class="mdc-tab__content">
+                      <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
+                      <span class="mdc-tab__text-label continent">Asia</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                    <span class="mdc-tab__content">
+                      <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
+                      <span class="mdc-tab__text-label continent">North</span><span class="mdc-tab__text-label">-America</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                    <span class="mdc-tab__content">
+                      <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
+                      <span class="mdc-tab__text-label continent">South</span> <span class="mdc-tab__text-label">-America</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                    <span class="mdc-tab__content">
+                      <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
+                      <span class="mdc-tab__text-label continent">Africa</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                    <span class="mdc-tab__content">
+                      <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
+                      <span class="mdc-tab__text-label continent">Oceania</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>  
+  <div class="images">
+    <ul class="mdc-image-list mdc-image-list--masonry my-masonry-image-list" id="countries">
+
+    </ul>  
+  </div>
+</main> 
+
+<!-- Sheet -->
+
+<section class="sheet sheet-out-of-view sheet-training" id="sheet-training">
+  
+  <header class="mdc-top-app-bar relative">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button close" aria-label="Open navigation menu">close</button>
+        <span class="mdc-top-app-bar__title sheet-title">Country name</span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Share">share</button>
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">settings</button>
+      </section>
+    </div>
+  </header>
+
+  <main class="details">
+      <!--Hier komen details-->
+      <img  class="image-sheet" src="../images/logo.png" alt="logo">
+      <h2 class="countryName">CountryName</h2>
+  </main>
+</section>
+
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
