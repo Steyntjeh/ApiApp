@@ -61,6 +61,8 @@ const item = document.querySelectorAll(".mdc-tab")
 const itemIndicator = document.querySelectorAll(".mdc-tab-indicator")
 const buttonTab = document.querySelectorAll(".mdc-tab")
 
+// foreach om op continent te filteren
+
 item.forEach(function(button){
     button.addEventListener('click', () => {
         const placeholder = document.querySelectorAll(".mdc-image-list__item")
@@ -80,6 +82,8 @@ item.forEach(function(button){
         })
     })
 })
+
+// filter eraf halen
 
 topAppBarElement.addEventListener("click", () => {
     
@@ -104,6 +108,7 @@ topAppBarElement.addEventListener("click", () => {
 
 });
 
+
 const zoek = document.querySelector(".zoek")
 let countriesData = [];
 
@@ -116,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error loading JSON:', error));
 });
 
+
+// het zoeken van de landen 
 function searchCountry() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const resultsDiv = document.getElementById('results');
@@ -136,13 +143,18 @@ function displayResults(countries) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
 
+    // als land niet bestaat aangeven dat het land niet gevonden kon worden
+
     if (countries.length === 0) {
         resultsDiv.innerHTML = '<p>Geen landen gevonden.</p>';
         return;
     }
 
+    // als gevonden is land met details ophalen
     countries.forEach(country => {
         const countryDiv = document.createElement('div');
+
+        // niet bij elk land de talen en currency's ivm aanpassen van de json file (Meer dan de helft doet het wel)
         countryDiv.innerHTML = `
             <div class="results">
                 <img src="${country.flags.png}">
@@ -161,6 +173,7 @@ function displayResults(countries) {
     });
 }
 
+// sheet aanroepen
 const sheet = document.querySelector(".sheet")
 const sheetTitle = document.querySelector(".sheet-title")
 const fotoSheet = document.querySelector(".image-sheet")
@@ -174,6 +187,9 @@ const countryName = document.querySelector(".countryName")
 
         placeholder.forEach(function(element){
             
+            // een of andere manier laat ie altijd bij de eerste het standaard zien. 
+            // heel lang naar gezocht hoe aan te passen niet kunnen vinden 
+
             element.addEventListener("click", function(){
 
                 const title = element.getElementsByTagName('img')[0].title
